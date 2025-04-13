@@ -55,7 +55,7 @@ gestionar_ventiladores() {
 }
 
 # Capturar señales para manejar la detención del contenedor
-trap ceder_control SIGINT SIGQUIT SIGTERM
+trap "ceder_control" SIGINT SIGQUIT SIGTERM
 
 # Ejecutar la gestión de ventiladores indefinidamente
 while true; do
