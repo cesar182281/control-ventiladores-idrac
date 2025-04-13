@@ -12,6 +12,7 @@ LOGIN_STRING="lanplus -H $IDRAC_IP -U $IDRAC_USER -P $IDRAC_PASSWORD"
 ceder_control() {
   echo "Se cede el control al sistema."
   ipmitool -I $LOGIN_STRING raw 0x30 0x30 0x01 0x01
+  exit 0
 }
 
 # Función para gestionar ventiladores
@@ -60,5 +61,5 @@ trap "ceder_control" SIGINT SIGQUIT SIGTERM
 # Ejecutar la gestión de ventiladores indefinidamente
 while true; do
   gestionar_ventiladores
-  sleep $CHECK_INTERVAL # Espera entre verificaciones
+  sleep $CHECK_INTERVAL & wait $! # Espera entre verificaciones, wait imprescindible para las señales de terminación
 done
