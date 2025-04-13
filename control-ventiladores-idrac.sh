@@ -12,7 +12,6 @@ LOGIN_STRING="lanplus -H $IDRAC_IP -U $IDRAC_USER -P $IDRAC_PASSWORD"
 ceder_control() {
   echo "Se cede el control al sistema."
   ipmitool -I $LOGIN_STRING raw 0x30 0x30 0x01 0x01
-  exit 0
 }
 
 # Función para gestionar ventiladores
