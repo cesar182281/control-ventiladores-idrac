@@ -12,10 +12,10 @@ WORKDIR /app
 
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "/app/control-salud.sh" ]
 
-ENV IDRAC_IP=192.168.0.120
+ENV IDRAC_IP=[ip idrac]
 ENV IDRAC_USER=root
 ENV IDRAC_PASSWORD=calvin
-ENV FAN_SPEED=7
+ENV FAN_SPEED=10
 ENV MAX_TEMP_AMBIENT=36
 ENV CHECK_INTERVAL=300
 
