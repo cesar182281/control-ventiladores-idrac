@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Esta aplicación solo es válida para iDRAC6e sobre Dell PowerEdge R510
-# en el que la iDRAC sólo tiene acceso a la temperatura del sensor de ambiente (system board ambient)
+# Esta aplicación solo es válida para iDRAC6e sobre Dell PowerEdge R510, en el que la iDRAC sólo tiene acceso a la temperatura del sensor de ambiente (system board ambient)
 
 # Se convierte la variable de velocidad decimal del usuario a hexadecimal de dos dígitos, que es como trabaja la iDRAC6e
 HEX_FAN_SPEED=$(printf '0x%02x' $FAN_SPEED)
